@@ -13,6 +13,7 @@ app.use(express.json())
 // 3. RUTAS
 app.use("/guitars", require("./routes/guitars"))
 app.use("/stores", require("./routes/stores"))
+app.use("/users", require("./routes/users"))
 
 // 4. SERVIDOR
 app.listen(process.env.PORT, () => {
