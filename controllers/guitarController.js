@@ -28,6 +28,7 @@ res.json({
 })
 
     } catch(error) {
+        console.log(error)
 res.status(500).json({
     msg: "Hubo un error creando la guitarra",
     error //o error:error, cuando el valor es el mismo que la referencia se puede quitar
@@ -68,11 +69,12 @@ exports.readOne = async(req,res) => {
 }
 
 exports.edit = async(req,res) => {
-    const {id, nombre, precio, color, imagen, description} = req.body
+    const {id} = req.params
+    const {nombre, precio, color, imagen, description} = req.body
     try {
         const updatedGuitar = await Guitar.findByIdAndUpdate(
             id,
-            {nombre, precio, color, imagen, description} = req.body,
+            {nombre, precio, color, imagen, description},
             {new: true})
 
             res.json({

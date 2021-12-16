@@ -11,7 +11,8 @@ const storeSchema = mongoose.Schema({
         require:true
     },
     telefono: {
-        type:String
+        type:String,
+        require:true
     }
 })
 // 3. MODELOS

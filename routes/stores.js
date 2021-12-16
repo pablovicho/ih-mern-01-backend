@@ -9,6 +9,7 @@ router.post("/create", storeController.create)
 //post envía al json
 router.get("/readall", storeController.readAll) //leer guitarras
 router.get("/readone/:id", storeController.readOne)//leer una. el id es vital
+router.put("/edit/:id", storeController.edit) //como estamos con json, es .put
 
 // 3. EXPORTACIONES
 module.exports = router
